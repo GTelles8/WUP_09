@@ -37,6 +37,13 @@ modelPerch = regsubsets(Weight ~ Length1 + Length2 + Length3 + Height + Width, d
 summary(modelPerch)
 ```
 
+##The best two variable predictors for  Perch weight is by using heigth and width data sets.
+
+```{r}
+best2Perch = lm(Weight ~ Height + Width, data = Perch)
+summary(best2Perch)
+```
+
 
 ### Best Models
 
