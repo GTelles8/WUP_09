@@ -16,16 +16,32 @@ output:
 ```{r include=FALSE,echo=FALSE}
 require(tigerstats)
 require(tidyverse)
+library(dplyr)
+library(leaps)
+Fish = read_csv("Fish.csv")
 ```
 
 # Predicting Fish Weight
 
+Find the best model using two variables to predict perch weight, and compare this to the best overall model.
 
 ## Perch
+
+```{r}
+Perch = filter(Fish, Species =='Perch')
+
+```
+
+```{r}
+modelPerch = regsubsets(Weight ~ Length1 + Length2 + Length3 + Height + Width, data = Perch)
+summary(modelPerch)
+```
+
 
 ### Best Models
 
 ### Best Two regressor model
+
 
 
 ## Pike
